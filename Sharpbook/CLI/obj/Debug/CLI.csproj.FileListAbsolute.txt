@@ -1,0 +1,7 @@
+E:\RepoGitHub\Tubes-2-Stima\Sharpbook\CLI\obj\Debug\CLI.csprojAssemblyReference.cache
+E:\RepoGitHub\Tubes-2-Stima\Sharpbook\CLI\obj\Debug\CLI.csproj.CoreCompileInputs.cache
+E:\RepoGitHub\Tubes-2-Stima\Sharpbook\CLI\bin\Debug\CLI.exe.config
+E:\RepoGitHub\Tubes-2-Stima\Sharpbook\CLI\bin\Debug\CLI.exe
+E:\RepoGitHub\Tubes-2-Stima\Sharpbook\CLI\bin\Debug\CLI.pdb
+E:\RepoGitHub\Tubes-2-Stima\Sharpbook\CLI\obj\Debug\CLI.exe
+E:\RepoGitHub\Tubes-2-Stima\Sharpbook\CLI\obj\Debug\CLI.pdb
