@@ -67,6 +67,11 @@ namespace CLI
 
 			return _simp;
 		}
+
+		public List<Simpul> GetSimpuls()
+        {
+			return this.simpuls;
+        }
 	}
 
 	class Simpul
@@ -97,6 +102,11 @@ namespace CLI
 			this.bersisian.Add(_namaB);
 			this.nBersisian++;
 		}
+
+		public void sortBersisian()
+        {
+			this.bersisian.Sort();
+        }
 
 		// menampilkan info simpul
 		public void ShowSimpul()

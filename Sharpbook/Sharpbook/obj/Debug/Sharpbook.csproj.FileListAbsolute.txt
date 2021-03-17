@@ -7,3 +7,12 @@ E:\RepoGitHub\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.csproj.Gener
 E:\RepoGitHub\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.csproj.CoreCompileInputs.cache
 E:\RepoGitHub\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.exe
 E:\RepoGitHub\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.pdb
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\bin\Debug\Sharpbook.exe.config
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\bin\Debug\Sharpbook.exe
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\bin\Debug\Sharpbook.pdb
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.csprojAssemblyReference.cache
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.Properties.Resources.resources
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.csproj.GenerateResource.cache
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.csproj.CoreCompileInputs.cache
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.exe
+C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\Sharpbook\Sharpbook\obj\Debug\Sharpbook.pdb

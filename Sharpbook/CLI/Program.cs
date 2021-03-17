@@ -10,18 +10,16 @@ namespace CLI
 	{
 		static void Main(string[] args)
 		{
-			Graf g = new Graf();
-			Simpul a = new Simpul("a");
-			a.AddBersisian("b");
-			a.AddBersisian("c");
-			Simpul b = new Simpul("b");
-			b.AddBersisian("a");
-			Simpul c = new Simpul("c");
-			c.AddBersisian("a");
-			g.AddSimpul(a);
-			g.AddSimpul(b);
-			g.AddSimpul(c);
-			g.ShowGraf();
+			FileHandler file = new FileHandler();
+			Graf graf;
+
+			graf = file.getGraf();
+			graf.ShowGraf();
+
+			while(true)
+            {
+
+            }
 		}
 	}
 }
