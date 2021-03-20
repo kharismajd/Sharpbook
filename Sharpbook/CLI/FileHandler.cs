@@ -35,7 +35,7 @@ namespace CLI
 				line = file.ReadLine();
 				fileSimpuls = line.Split(' ');
 
-				if (graf.GetSimpuls().Find(simp => simp.GetNama() == fileSimpuls[0]) == null)
+				if (graf.GetSimpulByName(fileSimpuls[0]) == null)
 				{
 					simpul = new Simpul(fileSimpuls[0]);
 					simpul.AddBersisian(fileSimpuls[1]);
@@ -43,10 +43,10 @@ namespace CLI
 				}
 				else
 				{
-					graf.GetSimpuls().Find(simp => simp.GetNama() == fileSimpuls[0]).AddBersisian(fileSimpuls[1]);
+					graf.GetSimpulByName(fileSimpuls[0]).AddBersisian(fileSimpuls[1]);
 				}
 
-				if (graf.GetSimpuls().Find(simp => simp.GetNama() == fileSimpuls[1]) == null)
+				if (graf.GetSimpulByName(fileSimpuls[1]) == null)
 				{
 					simpul = new Simpul(fileSimpuls[1]);
 					simpul.AddBersisian(fileSimpuls[0]);
@@ -54,7 +54,7 @@ namespace CLI
 				}
 				else
 				{
-					graf.GetSimpuls().Find(simp => simp.GetNama() == fileSimpuls[1]).AddBersisian(fileSimpuls[0]);
+					graf.GetSimpulByName(fileSimpuls[1]).AddBersisian(fileSimpuls[0]);
 				}
 
 				counter++;
