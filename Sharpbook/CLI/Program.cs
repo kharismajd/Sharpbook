@@ -20,21 +20,21 @@ namespace CLI
 			recommendation = graf.FriendRecommendation("A");
 			Console.WriteLine("Daftar rekomendasi teman untuk akun A");
 			foreach (string friend in recommendation.Keys)
-            {
+			{
 				Console.Write("Nama akun: ");
 				Console.WriteLine(friend);
 				Console.Write(recommendation[friend].Count);
 				Console.WriteLine(" mutual friends", recommendation[friend].Count);
 				foreach (string friendFromFriend in recommendation[friend])
-                {
+				{
 					Console.WriteLine(friendFromFriend);
-                }
+				}
 				Console.WriteLine("");
-            }
+			}
 
             while (true)
-            {
-            }
+			{
+			}
 		}
 	}
 }

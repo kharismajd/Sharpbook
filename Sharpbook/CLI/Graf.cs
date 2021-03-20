@@ -76,7 +76,7 @@ namespace CLI
 		public List<Simpul> GetSimpuls()
 		{
 			return this.simpuls;
-        }
+		}
 
 		public Dictionary<string, List<string>> FriendRecommendation(string namaSimpul)
 		{
@@ -144,14 +144,14 @@ namespace CLI
 		}
 
 		public void sortBersisian()
-        {
+		{
 			this.bersisian.Sort();
-        }
+		}
 
 		public List<string> GetBersisian()
-        {
+		{
 			return this.bersisian;
-        }
+		}
 
 		// menampilkan info simpul
 		public void ShowSimpul()
