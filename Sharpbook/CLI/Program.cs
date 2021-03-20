@@ -35,6 +35,8 @@ namespace CLI
 				}
 				Console.WriteLine("");
 			}
+			graf.BFS("A","G");
+			while (true);
 		}
 	}
 }
