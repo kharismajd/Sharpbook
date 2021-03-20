@@ -69,17 +69,17 @@ namespace CLI
 		}
 
 		public Simpul GetSimpulByName(string simpul)
-        {
+		{
 			return this.simpuls.Find(simp => simp.GetNama() == simpul);
 		}
 
 		public List<Simpul> GetSimpuls()
-        {
+		{
 			return this.simpuls;
         }
 
 		public Dictionary<string, List<string>> FriendRecommendation(string namaSimpul)
-        {
+		{
 			Dictionary<string, List<string>> recommendation = new Dictionary<string, List<string>>();
 			Dictionary<string, List<string>> sortedRecommendation = new Dictionary<string, List<string>>();
 			List<string> rootFriends;
@@ -90,25 +90,25 @@ namespace CLI
 			rootFriends = root.GetBersisian();
 
 			foreach(string friend in rootFriends)
-            {
+			{
 				friendFromFriends = GetSimpulByName(friend).GetBersisian();
 				foreach(string friendFromFriend in friendFromFriends)
-                {
+				{
 					if (!rootFriends.Contains(friendFromFriend) && friendFromFriend != namaSimpul)
-                    {
+					{
 						if (recommendation.ContainsKey(friendFromFriend))
-                        {
+						{
 							recommendation[friendFromFriend].Add(friend);
-                        }
+						}
 						else
-                        {
+						{
 							List<string> mutualFriends = new List<string>();
 							mutualFriends.Add(friend);
 							recommendation.Add(friendFromFriend, mutualFriends);
-                        }
-                    }
-                }
-            }
+						}
+					}
+				}
+			}
 			sortedRecommendation = recommendation.OrderByDescending(x => x.Value.Count).ToDictionary(x => x.Key, x => x.Value);
 			return sortedRecommendation;
 		}
