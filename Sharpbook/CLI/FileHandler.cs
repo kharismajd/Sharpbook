@@ -8,9 +8,8 @@ namespace CLI
 {
 	class FileHandler
 	{
-		public Graf getGraf()
+		public Graf getGraf(string fileName)
 		{
-			string fileName;
 			string line;
 			string[] fileSimpuls;
 
@@ -20,9 +19,6 @@ namespace CLI
 			Graf graf = new Graf();
 			Simpul simpul;
 
-			Console.Write("Masukkan nama file: ");
-
-			fileName = Console.ReadLine();
 			System.IO.StreamReader file = new System.IO.StreamReader("../../test/" + fileName);
 
 			line = file.ReadLine();

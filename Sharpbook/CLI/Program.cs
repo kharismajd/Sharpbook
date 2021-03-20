@@ -13,8 +13,12 @@ namespace CLI
 			FileHandler file = new FileHandler();
 			Dictionary<string, List<string>> recommendation = new Dictionary<string, List<string>>();
 			Graf graf;
+			string fileName;
 
-			graf = file.getGraf();
+			Console.Write("Masukkan nama file: ");
+			fileName = Console.ReadLine();
+
+			graf = file.getGraf(fileName);
 			graf.ShowGraf();
 
 			recommendation = graf.FriendRecommendation("A");
@@ -30,10 +34,6 @@ namespace CLI
 					Console.WriteLine(friendFromFriend);
 				}
 				Console.WriteLine("");
-			}
-
-            while (true)
-			{
 			}
 		}
 	}
