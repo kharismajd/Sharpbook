@@ -321,7 +321,42 @@ namespace Sharpbook
 				Console.WriteLine("Tidak ditemukan");
 				return new List<string>();
 			}
+		}
+		public List<string> DFS(string s, string e)
+		{
+			Dictionary<string, bool> visited = new Dictionary<string, bool>();
+			List<string> path = new List<string>();
+			for (int i = 0; i < this.GetNSimpul(); i++)
+			{
+				visited.Add(this.GetSimpuls()[i].GetNama(), false);
+			}
+			return DFSHandler(visited, path, s, e);
 
+		}
+		public List<string> DFSHandler(Dictionary<string, bool> visited, List<string> path, string at, string finish)
+		{
+			visited[at] = true;
+			if (at == finish)
+			{
+				path.Add(at);
+				return path;
+			}
+
+			foreach (string calon in GetSimpulByName(at).GetBersisian())
+			{
+				if (!visited[calon])
+				{
+					List<string> tempPath = new List<string>();
+					foreach (string astg in path) { tempPath.Add(astg); }
+					tempPath.Add(at);
+					List<string> temp = DFSHandler(visited, tempPath, calon, finish);
+					if (temp != null)
+					{
+						return temp;
+					}
+				}
+			}
+			return null;
 		}
 	}
 
