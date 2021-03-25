@@ -102,31 +102,58 @@ namespace Sharpbook
 
         private void button1_Click(object sender, EventArgs e)
         {
-			OpenFileDialog openFileDialog1 = new OpenFileDialog();
+			OpenFileDialog openFileDialog1 = new OpenFileDialog
+			{
+				InitialDirectory = @"C:\",
+				Title = "Browse",
+
+				CheckFileExists = true,
+				CheckPathExists = true,
+				DefaultExt = "txt",
+				Filter = "txt files|*.txt",
+				FilterIndex = 2,
+				RestoreDirectory = true
+			};
+
 			DialogResult result = openFileDialog1.ShowDialog();
-
-
 			if (result == DialogResult.OK)
-            {
+			{
 				this.SuspendLayout();
 				this.panel1.Controls.Clear();
 				this.ResumeLayout();
 
 				string file = openFileDialog1.FileName;
+
 				try
-                {
+				{
 					getGraf(file);
+					List<Simpul> simpuls = this.graf.GetSimpuls();
+					foreach (Simpul simpul in simpuls)
+					{
+						comboBox2.Items.Add(simpul.GetNama());
+						comboBox3.Items.Add(simpul.GetNama());
+					}
 					this.label2.Text = Path.GetFileName(file);
-                }
-				catch
-                {
+				}
+				catch (IOException)
+				{
 					MessageBox.Show("Format file tidak sesuai", "Error");
 					this.label2.Text = "";
-                }
-            }
+				}
+			}
 		}
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
@@ -146,16 +173,6 @@ namespace Sharpbook
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -166,7 +183,46 @@ namespace Sharpbook
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+		private void label5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label6_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			string selectedItem1 = comboBox2.SelectedItem.ToString();
+			string selectedItem2 = comboBox3.SelectedItem.ToString();
+			if (comboBox1.SelectedItem.ToString() == "BFS")
+			{
+				this.graf.BFS(selectedItem1, selectedItem2);
+			}
+			if (comboBox1.SelectedItem.ToString() == "DFS")
+			{
+				this.graf.DFS(selectedItem1, selectedItem2);
+			}
+		}
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+		}
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
