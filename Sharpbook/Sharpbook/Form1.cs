@@ -90,6 +90,8 @@ namespace Sharpbook
 			// Masukkan graf ke viewer
 			viewer.Graph = this.graf_visual;
 			viewer.Name = "graf";
+			viewer.OutsideAreaBrush = Brushes.White;
+			viewer.ToolBarIsVisible = false;
 			viewer.Dock = System.Windows.Forms.DockStyle.Fill;
 
 			// Masukkan viewer ke form
