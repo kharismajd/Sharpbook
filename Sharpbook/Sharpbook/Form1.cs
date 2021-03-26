@@ -224,12 +224,25 @@ namespace Sharpbook
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-
+			friendRecommendationNode = comboBox2.SelectedItem.ToString();
+			this.friendRecommend = this.graf.FriendRecommendation(friendRecommendationNode);
+			this.printFriendRecommendation();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-
+			pathNode1 = comboBox2.SelectedItem.ToString();
+			pathNode2 = comboBox3.SelectedItem.ToString();
+			string algoritma = comboBox1.SelectedItem.ToString();
+			if (algoritma == "BFS")
+			{
+				this.path = this.graf.BFS(pathNode1, pathNode2);
+			}
+			if (algoritma == "DFS")
+            {
+				this.path = this.graf.DFS(pathNode1, pathNode2);
+			}
+			this.printPath();
 		}
 
 		private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -279,16 +292,7 @@ namespace Sharpbook
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-			string selectedItem1 = comboBox2.SelectedItem.ToString();
-			string selectedItem2 = comboBox3.SelectedItem.ToString();
-			if (comboBox1.SelectedItem.ToString() == "BFS")
-			{
-				this.graf.BFS(selectedItem1, selectedItem2);
-			}
-			if (comboBox1.SelectedItem.ToString() == "DFS")
-			{
-				this.graf.DFS(selectedItem1, selectedItem2);
-			}
+
 		}
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
