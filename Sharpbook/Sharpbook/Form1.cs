@@ -15,8 +15,12 @@ namespace Sharpbook
 	{
 		private Graf graf;
 		private Dictionary<string, List<string>> friendRecommend;
+		private String friendRecommendationNode;
+		private String pathNode1;
+		private String pathNode2;
 		private List<string> path;
 		private Microsoft.Msagl.Drawing.Graph graf_visual;
+
 
 		public Form1()
 		{
@@ -100,6 +104,81 @@ namespace Sharpbook
 			this.ResumeLayout();
 		}
 
+		public void printFriendRecommendation()
+        {
+			String output = "";
+			output += "Daftar rekomendasi teman untuk akun ";
+			output += this.friendRecommendationNode;
+			output += " :\r\n";
+			foreach (string friend in this.friendRecommend.Keys)
+			{
+				output += "Nama akun: ";
+				output += friend;
+				output += "\r\n";
+				output += this.friendRecommend[friend].Count;
+				output += " mutual friends\r\n";
+				foreach (string friendFromFriend in this.friendRecommend[friend])
+				{
+					output += friendFromFriend;
+					output += "\r\n";
+				}
+				output += "\r\n";
+			}
+			this.richTextBox1.Text = output;
+		}
+
+		public void printPath()
+        {
+			String output = "";
+			output += "Nama akun: ";
+			output += this.pathNode1;
+			output += " dan ";
+			output += this.pathNode2;
+			output += "\r\n";
+			if (this.path == null)
+            {
+				output += "Tidak ada jalur koneksi yang tersedia\r\n";
+				output += "Anda harus memulai koneksi baru itu sendiri";
+            }
+			else if (this.pathNode1 == this.pathNode2)
+			{
+				output += "Kamu sudah berteman dengan dirimu sendiri";
+			}
+			else if (this.path.Count() == 2)
+            {
+				output += "Kamu sudah berteman dengan orang tersebut";
+            }
+			else
+            {
+				if (this.path.Count() == 3)
+                {
+					output += "1st-";
+                }
+				else if (this.path.Count() == 4)
+                {
+					output += "2nd-";
+                }
+				else if (this.path.Count() == 5)
+                {
+					output += "3rd-";
+                }
+				else
+                {
+					output += this.path.Count - 2;
+					output += "th-";
+                }
+				output += "degree connection\r\n";
+				output += this.path[0];
+				
+				for (int i = 1; i < this.path.Count(); i++)
+                {
+					output += " -> ";
+					output += this.path[i];
+                }
+            }
+			this.richTextBox1.Text = output;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 			OpenFileDialog openFileDialog1 = new OpenFileDialog
@@ -135,7 +214,7 @@ namespace Sharpbook
 					}
 					this.label2.Text = Path.GetFileName(file);
 				}
-				catch (IOException)
+				catch
 				{
 					MessageBox.Show("Format file tidak sesuai", "Error");
 					this.label2.Text = "";
@@ -377,7 +456,7 @@ namespace Sharpbook
 			else 
 			{
 				Console.WriteLine("Tidak ditemukan");
-				return new List<string>();
+				return null;
 			}
 		}
 		public List<string> DFS(string s, string e)

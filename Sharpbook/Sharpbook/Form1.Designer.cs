@@ -64,7 +64,6 @@ namespace Sharpbook
             // panel1
             // 
             this.panel1.AllowDrop = true;
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(13, 48);
@@ -182,7 +181,7 @@ namespace Sharpbook
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(485, 232);
             this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "Nanti di sini outputnya";
+            this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label6
@@ -214,6 +213,8 @@ namespace Sharpbook
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
+            this.MaximumSize = new System.Drawing.Size(526, 1000);
+            this.MinimumSize = new System.Drawing.Size(526, 695);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
