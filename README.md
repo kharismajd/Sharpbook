@@ -3,7 +3,7 @@ Tugas Besar 2 IF2211 Strategi Algoritma 2020-2
 
 # Penjelasan singkat algoritma
 Pada program, menggunakan algoritma _graph traversal_ untuk graf statis, yaitu algoritma DFS (_Depth-First Search_) dan BFS (_Breadth First Search_).
-- DFS adalah pencarian secara mendalam
+- DFS adalah pencarian secara mendalam. Dari simpul root akan mencari satu simpul yang bertetangga. Kemudian pencarian dilanjutkan dengan mengambil tetangga dari simpul tetangga root. Jika tidak ada lagi simpul tetangga yang bisa dikunjungi dan belum semua simpul dikunjungi, maka akan melakukan backtracking. Proses akan dilakukan secara terus menerus hingga simpul finish tercapai.
 - BFS adalah pencarian secara melebar. Awalnya dilakukan pencarian tetangga dari simpul start. Kemudian simpul tetangga tersebut akan dimasukkan ke dalam suatu queue. Kemudian ambil tetangga dari simpul yang ada di queue secara terus menerus hingga simpul finish tercapai.
 
 # Requirement program
