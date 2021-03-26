@@ -44,7 +44,11 @@ namespace Sharpbook
             this.label5 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -54,11 +58,11 @@ namespace Sharpbook
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(74, 4);
+            this.button1.Location = new System.Drawing.Point(72, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Browse...";
+            this.button1.Text = "browse";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -77,7 +81,7 @@ namespace Sharpbook
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 2;
@@ -88,7 +92,7 @@ namespace Sharpbook
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 30);
+            this.label2.Location = new System.Drawing.Point(149, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 3;
@@ -96,7 +100,8 @@ namespace Sharpbook
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 372);
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(258, 266);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(241, 35);
             this.button2.TabIndex = 4;
@@ -106,7 +111,8 @@ namespace Sharpbook
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(256, 372);
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(12, 266);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(241, 35);
             this.button3.TabIndex = 5;
@@ -117,20 +123,22 @@ namespace Sharpbook
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 307);
+            this.label3.Location = new System.Drawing.Point(231, 352);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Algorithm:";
+            this.label3.Text = "Algoritma:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "BFS",
             "DFS"});
-            this.comboBox1.Location = new System.Drawing.Point(195, 323);
+            this.comboBox1.Location = new System.Drawing.Point(195, 370);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
@@ -138,8 +146,10 @@ namespace Sharpbook
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Enabled = false;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(195, 283);
+            this.comboBox2.Location = new System.Drawing.Point(195, 325);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(48, 21);
             this.comboBox2.TabIndex = 8;
@@ -147,8 +157,10 @@ namespace Sharpbook
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Enabled = false;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(268, 283);
+            this.comboBox3.Location = new System.Drawing.Point(268, 325);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(48, 21);
             this.comboBox3.TabIndex = 9;
@@ -157,7 +169,7 @@ namespace Sharpbook
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(281, 267);
+            this.label4.Location = new System.Drawing.Point(281, 309);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 10;
@@ -167,7 +179,7 @@ namespace Sharpbook
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(201, 267);
+            this.label5.Location = new System.Drawing.Point(201, 309);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 11;
@@ -178,9 +190,10 @@ namespace Sharpbook
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 412);
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Location = new System.Drawing.Point(12, 434);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(485, 232);
+            this.richTextBox1.Size = new System.Drawing.Size(485, 213);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -188,29 +201,79 @@ namespace Sharpbook
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(247, 286);
+            this.label6.Location = new System.Drawing.Point(249, 328);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "->";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(219, 400);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Submit";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.Enabled = false;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(234, 325);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(48, 21);
+            this.comboBox4.TabIndex = 15;
+            this.comboBox4.Visible = false;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(170, 24);
+            this.label7.Location = new System.Drawing.Point(240, 309);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 24);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Graph Visualization";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Akun:";
+            this.label7.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Location = new System.Drawing.Point(219, 356);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Submit";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBox2.Location = new System.Drawing.Point(12, 388);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(485, 259);
+            this.richTextBox2.TabIndex = 19;
+            this.richTextBox2.Text = "";
+            this.richTextBox2.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 656);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label5);
@@ -225,10 +288,11 @@ namespace Sharpbook
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.richTextBox2);
             this.MaximumSize = new System.Drawing.Size(526, 1000);
             this.MinimumSize = new System.Drawing.Size(526, 695);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sharpbook";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -252,7 +316,11 @@ namespace Sharpbook
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 

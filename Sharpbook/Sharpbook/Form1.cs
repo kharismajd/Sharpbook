@@ -15,9 +15,6 @@ namespace Sharpbook
 	{
 		private Graf graf;
 		private Dictionary<string, List<string>> friendRecommend;
-		private String friendRecommendationNode;
-		private String pathNode1;
-		private String pathNode2;
 		private List<string> path;
 		private Microsoft.Msagl.Drawing.Graph graf_visual;
 
@@ -106,9 +103,10 @@ namespace Sharpbook
 
 		public void printFriendRecommendation()
         {
+			String friendRecommendationNode = this.comboBox4.SelectedItem.ToString();
 			String output = "";
 			output += "Daftar rekomendasi teman untuk akun ";
-			output += this.friendRecommendationNode;
+			output += friendRecommendationNode;
 			output += " :\r\n";
 			foreach (string friend in this.friendRecommend.Keys)
 			{
@@ -124,23 +122,25 @@ namespace Sharpbook
 				}
 				output += "\r\n";
 			}
-			this.richTextBox1.Text = output;
+			this.richTextBox2.Text = output;
 		}
 
 		public void printPath()
         {
+			String pathNode1 = comboBox2.SelectedItem.ToString();
+			String pathNode2 = comboBox3.SelectedItem.ToString();
 			String output = "";
 			output += "Nama akun: ";
-			output += this.pathNode1;
+			output += pathNode1;
 			output += " dan ";
-			output += this.pathNode2;
+			output += pathNode2;
 			output += "\r\n";
 			if (this.path == null)
             {
 				output += "Tidak ada jalur koneksi yang tersedia\r\n";
 				output += "Anda harus memulai koneksi baru itu sendiri";
             }
-			else if (this.pathNode1 == this.pathNode2)
+			else if (pathNode1 == pathNode2)
 			{
 				output += "Kamu sudah berteman dengan dirimu sendiri";
 			}
@@ -168,7 +168,7 @@ namespace Sharpbook
 					output += "th-";
                 }
 				output += "degree connection\r\n";
-				output += "Jalur koneksi : ";
+				output += "jalur koneksi: ";
 				output += this.path[0];
 				
 				for (int i = 1; i < this.path.Count(); i++)
@@ -179,6 +179,76 @@ namespace Sharpbook
             }
 			this.richTextBox1.Text = output;
         }
+
+		public void enableButtons()
+        {
+			this.label3.Enabled = true;
+			this.label4.Enabled = true;
+			this.label5.Enabled = true;
+			this.label7.Enabled = true;
+			this.comboBox1.Enabled = true;
+			this.comboBox2.Enabled = true;
+			this.comboBox3.Enabled = true;
+			this.comboBox4.Enabled = true;
+			this.button2.Enabled = true;
+			this.button3.Enabled = true;
+			this.button4.Enabled = true;
+			this.button5.Enabled = true;
+			this.richTextBox1.Enabled = true;
+			this.richTextBox2.Enabled = true;
+		}
+
+		public void dissableButtons()
+        {
+			this.label3.Enabled = false;
+			this.label4.Enabled = false;
+			this.label5.Enabled = false;
+			this.label7.Enabled = false;
+			this.comboBox1.Enabled = false;
+			this.comboBox2.Enabled = false;
+			this.comboBox3.Enabled = false;
+			this.comboBox4.Enabled = false;
+			this.button2.Enabled = false;
+			this.button3.Enabled = false;
+			this.button4.Enabled = false;
+			this.button5.Enabled = false;
+			this.richTextBox1.Enabled = false;
+			this.richTextBox2.Enabled = false;
+		}
+
+		public void showFriendRecommendationPage()
+        {
+			this.label3.Visible = false;
+			this.label4.Visible = false;
+			this.label5.Visible = false;
+			this.comboBox1.Visible = false;
+			this.comboBox2.Visible = false;
+			this.comboBox3.Visible = false;
+			this.button4.Visible = false;
+			this.richTextBox1.Visible = false;
+
+			this.label7.Visible = true;
+			this.comboBox4.Visible = true;
+			this.button5.Visible = true;
+			this.richTextBox2.Visible = true;
+		}
+
+		public void showExploreFriendPage()
+        {
+			this.label3.Visible = true;
+			this.label4.Visible = true;
+			this.label5.Visible = true;
+			this.comboBox1.Visible = true;
+			this.comboBox2.Visible = true;
+			this.comboBox3.Visible = true;
+			this.button4.Visible = true;
+			this.richTextBox1.Visible = true;
+
+			this.label7.Visible = false;
+			this.comboBox4.Visible = false;
+			this.button5.Visible = false;
+			this.richTextBox2.Visible = false;
+		}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -203,7 +273,12 @@ namespace Sharpbook
 				this.ResumeLayout();
 
 				string file = openFileDialog1.FileName;
+				this.richTextBox1.Text = "";
+				this.richTextBox2.Text = "";
 
+				comboBox2.Items.Clear();
+				comboBox3.Items.Clear();
+				comboBox4.Items.Clear();
 				try
 				{
 					getGraf(file);
@@ -212,52 +287,28 @@ namespace Sharpbook
 					{
 						comboBox2.Items.Add(simpul.GetNama());
 						comboBox3.Items.Add(simpul.GetNama());
+						comboBox4.Items.Add(simpul.GetNama());
 					}
 					this.label2.Text = Path.GetFileName(file);
+					enableButtons();
 				}
 				catch
 				{
 					MessageBox.Show("Format file tidak sesuai", "Error");
 					this.label2.Text = "";
+					dissableButtons();					
 				}
 			}
 		}
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			try
-			{
-				friendRecommendationNode = comboBox2.SelectedItem.ToString();
-				this.friendRecommend = this.graf.FriendRecommendation(friendRecommendationNode);
-				this.printFriendRecommendation();
-			}
-            catch (NullReferenceException)
-            {
-				MessageBox.Show("Akun harus dipilih dahulu!", "Error");
-			}
+			showFriendRecommendationPage();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			try
-			{
-				pathNode1 = comboBox2.SelectedItem.ToString();
-				pathNode2 = comboBox3.SelectedItem.ToString();
-				string algoritma = comboBox1.SelectedItem.ToString();
-				if (algoritma == "BFS")
-				{
-					this.path = this.graf.BFS(pathNode1, pathNode2);
-				}
-				if (algoritma == "DFS")
-				{
-					this.path = this.graf.DFS(pathNode1, pathNode2);
-				}
-				this.printPath();
-			}
-            catch (NullReferenceException)
-            {
-				MessageBox.Show("Akun atau jenis algoritma harus dipilih dahulu!", "Error");
-            }
+			showExploreFriendPage();
 		}
 
 		private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -324,6 +375,41 @@ namespace Sharpbook
         {
 
         }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+			if (comboBox4.SelectedIndex > -1)
+            {
+				string friendRecommendationNode = comboBox4.SelectedItem.ToString();
+				this.friendRecommend = this.graf.FriendRecommendation(friendRecommendationNode);
+				printFriendRecommendation();
+            }
+
+		}
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+			if (comboBox1.SelectedIndex > -1 && comboBox2.SelectedIndex > -1 && comboBox3.SelectedIndex > -1)
+			{
+				String pathNode1 = comboBox2.SelectedItem.ToString();
+				String pathNode2 = comboBox3.SelectedItem.ToString();
+				string algoritma = comboBox1.SelectedItem.ToString();
+				if (algoritma == "BFS")
+                {
+					this.path = this.graf.BFS(pathNode1, pathNode2);
+                }
+				else if (algoritma == "DFS")
+                {
+					this.path = this.graf.DFS(pathNode1, pathNode2);
+				}
+				printPath();
+			}
+		}
     }
 
     public class Graf
