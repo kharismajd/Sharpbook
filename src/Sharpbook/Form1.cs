@@ -314,6 +314,9 @@ namespace Sharpbook
 				this.panel1.Controls.Clear();
 				this.ResumeLayout();
 
+				this.friendRecommend = null;
+				this.path = null;
+
 				this.filePath = openFileDialog1.FileName;
 				this.richTextBox1.Text = "";
 
