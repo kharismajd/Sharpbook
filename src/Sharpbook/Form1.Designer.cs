@@ -48,7 +48,6 @@ namespace Sharpbook
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -123,7 +122,7 @@ namespace Sharpbook
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(231, 352);
+            this.label3.Location = new System.Drawing.Point(108, 315);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 6;
@@ -138,7 +137,7 @@ namespace Sharpbook
             this.comboBox1.Items.AddRange(new object[] {
             "BFS",
             "DFS"});
-            this.comboBox1.Location = new System.Drawing.Point(195, 370);
+            this.comboBox1.Location = new System.Drawing.Point(72, 331);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
@@ -149,7 +148,7 @@ namespace Sharpbook
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Enabled = false;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(195, 325);
+            this.comboBox2.Location = new System.Drawing.Point(215, 331);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(48, 21);
             this.comboBox2.TabIndex = 8;
@@ -160,7 +159,7 @@ namespace Sharpbook
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Enabled = false;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(268, 325);
+            this.comboBox3.Location = new System.Drawing.Point(288, 331);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(48, 21);
             this.comboBox3.TabIndex = 9;
@@ -169,7 +168,7 @@ namespace Sharpbook
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(281, 309);
+            this.label4.Location = new System.Drawing.Point(301, 315);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 10;
@@ -179,7 +178,7 @@ namespace Sharpbook
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(201, 309);
+            this.label5.Location = new System.Drawing.Point(221, 315);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 11;
@@ -188,12 +187,15 @@ namespace Sharpbook
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 434);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 369);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(485, 213);
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(485, 288);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -201,7 +203,7 @@ namespace Sharpbook
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(249, 328);
+            this.label6.Location = new System.Drawing.Point(269, 334);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 13);
             this.label6.TabIndex = 13;
@@ -211,7 +213,7 @@ namespace Sharpbook
             // button4
             // 
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(219, 400);
+            this.button4.Location = new System.Drawing.Point(357, 329);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 14;
@@ -224,7 +226,7 @@ namespace Sharpbook
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.Enabled = false;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(234, 325);
+            this.comboBox4.Location = new System.Drawing.Point(189, 331);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(48, 21);
             this.comboBox4.TabIndex = 15;
@@ -234,7 +236,7 @@ namespace Sharpbook
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(240, 309);
+            this.label7.Location = new System.Drawing.Point(195, 314);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 16;
@@ -244,7 +246,7 @@ namespace Sharpbook
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(219, 356);
+            this.button5.Location = new System.Drawing.Point(255, 330);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 17;
@@ -252,18 +254,6 @@ namespace Sharpbook
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.richTextBox2.Location = new System.Drawing.Point(12, 388);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(485, 259);
-            this.richTextBox2.TabIndex = 19;
-            this.richTextBox2.Text = "";
-            this.richTextBox2.Visible = false;
             // 
             // Form1
             // 
@@ -288,7 +278,6 @@ namespace Sharpbook
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox2);
             this.MaximumSize = new System.Drawing.Size(526, 1000);
             this.MinimumSize = new System.Drawing.Size(526, 695);
             this.Name = "Form1";
@@ -320,7 +309,6 @@ namespace Sharpbook
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 

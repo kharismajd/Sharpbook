@@ -17,6 +17,7 @@ namespace Sharpbook
 		private Dictionary<string, List<string>> friendRecommend;
 		private List<string> path;
 		private Microsoft.Msagl.Drawing.Graph graf_visual;
+		private String filePath;
 
 
 		public Form1()
@@ -73,12 +74,58 @@ namespace Sharpbook
 				}
 
 				// Bagian kelas visualisasi graf
+
+				// Bagian pewarnaan general
 				var edge = this.graf_visual.AddEdge(fileSimpuls[0], fileSimpuls[1]);
+				edge.Attr.Color = Microsoft.Msagl.Drawing.Color.LightBlue;
 				this.graf_visual.FindNode(fileSimpuls[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.LightCyan;
 				this.graf_visual.FindNode(fileSimpuls[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.LightCyan;
-				edge.Attr.Color = Microsoft.Msagl.Drawing.Color.LightBlue;
 				edge.Attr.ArrowheadAtSource = Microsoft.Msagl.Drawing.ArrowStyle.None;
 				edge.Attr.ArrowheadAtTarget = Microsoft.Msagl.Drawing.ArrowStyle.None;
+				
+				// Bagian pewarnaan explore friend
+				if (this.path != null)
+				{
+					if (this.path.Count == 1)
+                    {
+						if (this.path[0] == fileSimpuls[0] || this.path[0] == fileSimpuls[1])
+                        {
+							this.graf_visual.FindNode(fileSimpuls[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Beige;
+						}
+                    }
+
+					for (int i = 0; i < this.path.Count - 1; i++)
+					{
+						if ((this.path[i] == fileSimpuls[0] && this.path[i + 1] == fileSimpuls[1]) || (this.path[i] == fileSimpuls[1] && this.path[i + 1] == fileSimpuls[0]))
+						{
+							edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+						}
+
+						if (this.path[i] == fileSimpuls[0] || this.path[i+1] == fileSimpuls[0])
+                        {
+							this.graf_visual.FindNode(fileSimpuls[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Beige;
+						}
+
+						if (this.path[i] == fileSimpuls[1] || this.path[i + 1] == fileSimpuls[1])
+						{
+							this.graf_visual.FindNode(fileSimpuls[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Beige;
+						}
+					}
+				}
+
+				//Bagian pewarnaan friend recommendation
+				if  (this.friendRecommend != null)
+                {
+					if (this.friendRecommend.ContainsKey(fileSimpuls[0]))
+                    {
+						this.graf_visual.FindNode(fileSimpuls[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Beige;
+					}
+
+					if (this.friendRecommend.ContainsKey(fileSimpuls[1]))
+					{
+						this.graf_visual.FindNode(fileSimpuls[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Beige;
+					}
+				}
 
 				counter++;
 			}
@@ -122,7 +169,7 @@ namespace Sharpbook
 				}
 				output += "\r\n";
 			}
-			this.richTextBox2.Text = output;
+			this.richTextBox1.Text = output;
 		}
 
 		public void printPath()
@@ -142,11 +189,11 @@ namespace Sharpbook
 			}
 			else if (pathNode1 == pathNode2)
 			{
-				output += "Kamu sudah berteman dengan dirimu sendiri";
+				output += "Akun tersebut sudah berteman dengan dirinya sendiri";
 			}
 			else if (this.path.Count() == 2)
 			{
-				output += "Kamu sudah berteman dengan orang tersebut";
+				output += "Akun tersebut sudah saling berteman";
 			}
 			else
 			{
@@ -195,7 +242,6 @@ namespace Sharpbook
 			this.button4.Enabled = true;
 			this.button5.Enabled = true;
 			this.richTextBox1.Enabled = true;
-			this.richTextBox2.Enabled = true;
 		}
 
 		public void dissableButtons()
@@ -213,7 +259,6 @@ namespace Sharpbook
 			this.button4.Enabled = false;
 			this.button5.Enabled = false;
 			this.richTextBox1.Enabled = false;
-			this.richTextBox2.Enabled = false;
 		}
 
 		public void showFriendRecommendationPage()
@@ -225,12 +270,10 @@ namespace Sharpbook
 			this.comboBox2.Visible = false;
 			this.comboBox3.Visible = false;
 			this.button4.Visible = false;
-			this.richTextBox1.Visible = false;
 
 			this.label7.Visible = true;
 			this.comboBox4.Visible = true;
 			this.button5.Visible = true;
-			this.richTextBox2.Visible = true;
 		}
 
 		public void showExploreFriendPage()
@@ -242,12 +285,10 @@ namespace Sharpbook
 			this.comboBox2.Visible = true;
 			this.comboBox3.Visible = true;
 			this.button4.Visible = true;
-			this.richTextBox1.Visible = true;
 
 			this.label7.Visible = false;
 			this.comboBox4.Visible = false;
 			this.button5.Visible = false;
-			this.richTextBox2.Visible = false;
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -272,16 +313,15 @@ namespace Sharpbook
 				this.panel1.Controls.Clear();
 				this.ResumeLayout();
 
-				string file = openFileDialog1.FileName;
+				this.filePath = openFileDialog1.FileName;
 				this.richTextBox1.Text = "";
-				this.richTextBox2.Text = "";
 
 				comboBox2.Items.Clear();
 				comboBox3.Items.Clear();
 				comboBox4.Items.Clear();
 				try
 				{
-					getGraf(file);
+					getGraf(this.filePath);
 					List<Simpul> simpuls = this.graf.GetSimpuls();
 					foreach (Simpul simpul in simpuls)
 					{
@@ -289,7 +329,7 @@ namespace Sharpbook
 						comboBox3.Items.Add(simpul.GetNama());
 						comboBox4.Items.Add(simpul.GetNama());
 					}
-					this.label2.Text = Path.GetFileName(file);
+					this.label2.Text = Path.GetFileName(this.filePath);
 					enableButtons();
 				}
 				catch
@@ -385,9 +425,16 @@ namespace Sharpbook
 		{
 			if (comboBox4.SelectedIndex > -1)
 			{
+				this.SuspendLayout();
+				this.panel1.Controls.Clear();
+				this.ResumeLayout();
+
 				string friendRecommendationNode = comboBox4.SelectedItem.ToString();
 				this.friendRecommend = this.graf.FriendRecommendation(friendRecommendationNode);
 				printFriendRecommendation();
+
+				this.path = null;
+				getGraf(this.filePath);
 			}
 
 		}
@@ -396,6 +443,10 @@ namespace Sharpbook
 		{
 			if (comboBox1.SelectedIndex > -1 && comboBox2.SelectedIndex > -1 && comboBox3.SelectedIndex > -1)
 			{
+				this.SuspendLayout();
+				this.panel1.Controls.Clear();
+				this.ResumeLayout();
+
 				String pathNode1 = comboBox2.SelectedItem.ToString();
 				String pathNode2 = comboBox3.SelectedItem.ToString();
 				string algoritma = comboBox1.SelectedItem.ToString();
@@ -408,6 +459,9 @@ namespace Sharpbook
 					this.path = this.graf.DFS(pathNode1, pathNode2);
 				}
 				printPath();
+
+				this.friendRecommend = null;
+				getGraf(this.filePath);
 			}
 		}
 	}
