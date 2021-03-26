@@ -102,7 +102,7 @@ namespace Sharpbook
 		}
 
 		public void printFriendRecommendation()
-        {
+		{
 			String friendRecommendationNode = this.comboBox4.SelectedItem.ToString();
 			String output = "";
 			output += "Daftar rekomendasi teman untuk akun ";
@@ -126,7 +126,7 @@ namespace Sharpbook
 		}
 
 		public void printPath()
-        {
+		{
 			String pathNode1 = comboBox2.SelectedItem.ToString();
 			String pathNode2 = comboBox3.SelectedItem.ToString();
 			String output = "";
@@ -136,52 +136,52 @@ namespace Sharpbook
 			output += pathNode2;
 			output += "\r\n";
 			if (this.path == null)
-            {
+			{
 				output += "Tidak ada jalur koneksi yang tersedia\r\n";
 				output += "Anda harus memulai koneksi baru itu sendiri";
-            }
+			}
 			else if (pathNode1 == pathNode2)
 			{
 				output += "Kamu sudah berteman dengan dirimu sendiri";
 			}
 			else if (this.path.Count() == 2)
-            {
+			{
 				output += "Kamu sudah berteman dengan orang tersebut";
-            }
+			}
 			else
-            {
+			{
 				if (this.path.Count() == 3)
-                {
+				{
 					output += "1st-";
-                }
+				}
 				else if (this.path.Count() == 4)
-                {
+				{
 					output += "2nd-";
-                }
+				}
 				else if (this.path.Count() == 5)
-                {
+				{
 					output += "3rd-";
-                }
+				}
 				else
-                {
+				{
 					output += this.path.Count - 2;
 					output += "th-";
-                }
+				}
 				output += "degree connection\r\n";
-				output += "jalur koneksi: ";
+				output += "Jalur koneksi: ";
 				output += this.path[0];
 				
 				for (int i = 1; i < this.path.Count(); i++)
-                {
+				{
 					output += " -> ";
 					output += this.path[i];
-                }
-            }
+				}
+			}
 			this.richTextBox1.Text = output;
-        }
+		}
 
 		public void enableButtons()
-        {
+		{
 			this.label3.Enabled = true;
 			this.label4.Enabled = true;
 			this.label5.Enabled = true;
@@ -199,7 +199,7 @@ namespace Sharpbook
 		}
 
 		public void dissableButtons()
-        {
+		{
 			this.label3.Enabled = false;
 			this.label4.Enabled = false;
 			this.label5.Enabled = false;
@@ -217,7 +217,7 @@ namespace Sharpbook
 		}
 
 		public void showFriendRecommendationPage()
-        {
+		{
 			this.label3.Visible = false;
 			this.label4.Visible = false;
 			this.label5.Visible = false;
@@ -234,7 +234,7 @@ namespace Sharpbook
 		}
 
 		public void showExploreFriendPage()
-        {
+		{
 			this.label3.Visible = true;
 			this.label4.Visible = true;
 			this.label5.Visible = true;
@@ -250,8 +250,8 @@ namespace Sharpbook
 			this.richTextBox2.Visible = false;
 		}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+		private void button1_Click(object sender, EventArgs e)
+		{
 			OpenFileDialog openFileDialog1 = new OpenFileDialog
 			{
 				InitialDirectory = @"C:\",
@@ -312,34 +312,34 @@ namespace Sharpbook
 		}
 
 		private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
+		{
 
-        }
+		}
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
 
-        }
+		}
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+		private void label1_Click(object sender, EventArgs e)
+		{
 
-        }
+		}
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+		private void label2_Click(object sender, EventArgs e)
+		{
 
-        }
+		}
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+		private void label3_Click(object sender, EventArgs e)
+		{
 
-        }
+		}
 
-        private void label4_Click(object sender, EventArgs e)
-        {
+		private void label4_Click(object sender, EventArgs e)
+		{
 
-        }
+		}
 
 		private void label5_Click(object sender, EventArgs e)
 		{
@@ -352,65 +352,65 @@ namespace Sharpbook
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
-        {
+		{
 
-        }
+		}
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
 		}
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
+		{
 
 		}
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
+		private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+		{
 
-        }
+		}
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
+		private void richTextBox1_TextChanged(object sender, EventArgs e)
+		{
 
-        }
+		}
 
-        private void button5_Click(object sender, EventArgs e)
-        {
+		private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
 			if (comboBox4.SelectedIndex > -1)
-            {
+			{
 				string friendRecommendationNode = comboBox4.SelectedItem.ToString();
 				this.friendRecommend = this.graf.FriendRecommendation(friendRecommendationNode);
 				printFriendRecommendation();
-            }
+			}
 
 		}
 
-        private void button4_Click(object sender, EventArgs e)
-        {
+		private void button4_Click(object sender, EventArgs e)
+		{
 			if (comboBox1.SelectedIndex > -1 && comboBox2.SelectedIndex > -1 && comboBox3.SelectedIndex > -1)
 			{
 				String pathNode1 = comboBox2.SelectedItem.ToString();
 				String pathNode2 = comboBox3.SelectedItem.ToString();
 				string algoritma = comboBox1.SelectedItem.ToString();
 				if (algoritma == "BFS")
-                {
+				{
 					this.path = this.graf.BFS(pathNode1, pathNode2);
-                }
+				}
 				else if (algoritma == "DFS")
-                {
+				{
 					this.path = this.graf.DFS(pathNode1, pathNode2);
 				}
 				printPath();
 			}
 		}
-    }
+	}
 
     public class Graf
 	{
