@@ -24,3 +24,14 @@ C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\src\Sharpbook\obj\
 C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.csproj.CopyComplete
 C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.exe
 C:\Users\Khari\Desktop\Semester 4\Stima\Tubes 2\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.pdb
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\bin\Sharpbook.exe.config
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\bin\Sharpbook.exe
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\bin\Sharpbook.pdb
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.csprojAssemblyReference.cache
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.Form1.resources
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.Properties.Resources.resources
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.csproj.GenerateResource.cache
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.csproj.CoreCompileInputs.cache
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.csproj.CopyComplete
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.exe
+C:\Users\acer\OneDrive - Institut Teknologi Bandung\Documents\Kuliah\Jurusan\Semester 4\Strategi Algoritma\Tugas\Tubes-2-Stima\src\Sharpbook\obj\Debug\Sharpbook.pdb

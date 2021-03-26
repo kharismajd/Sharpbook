@@ -295,7 +295,8 @@ namespace Sharpbook
 		{
 			OpenFileDialog openFileDialog1 = new OpenFileDialog
 			{
-				InitialDirectory = @"C:\",
+
+				InitialDirectory = System.AppDomain.CurrentDomain.BaseDirectory + @"..\test\",
 				Title = "Browse",
 
 				CheckFileExists = true,
