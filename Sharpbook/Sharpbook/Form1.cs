@@ -357,11 +357,11 @@ namespace Sharpbook
 		}
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+		{
 
 		}
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+		private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
 		}
@@ -412,7 +412,7 @@ namespace Sharpbook
 		}
 	}
 
-    public class Graf
+	public class Graf
 	{
 		/*--- Fields ---*/
 		List<Simpul> simpuls; // adjacency list
@@ -485,6 +485,7 @@ namespace Sharpbook
 		}
 
 		public int GetNSimpul() { return this.nSimpul; }
+
 		public Dictionary<string, List<string>> FriendRecommendation(string namaSimpul)
 		{
 			Dictionary<string, List<string>> recommendation = new Dictionary<string, List<string>>();
@@ -519,6 +520,7 @@ namespace Sharpbook
 			sortedRecommendation = recommendation.OrderByDescending(x => x.Value.Count).ToDictionary(x => x.Key, x => x.Value);
 			return sortedRecommendation;
 		}
+
 		public List<string> BFS(string s, string e)
 		{
 
@@ -564,6 +566,7 @@ namespace Sharpbook
 				return null;
 			}
 		}
+
 		public List<string> DFS(string s, string e)
 		{
 			Dictionary<string, bool> visited = new Dictionary<string, bool>();
@@ -575,6 +578,7 @@ namespace Sharpbook
 			return DFSHandler(visited, path, s, e);
 
 		}
+
 		public List<string> DFSHandler(Dictionary<string, bool> visited, List<string> path, string at, string finish)
 		{
 			visited[at] = true;
