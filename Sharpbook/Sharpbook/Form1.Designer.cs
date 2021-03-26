@@ -44,6 +44,7 @@ namespace Sharpbook
             this.label5 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -53,7 +54,7 @@ namespace Sharpbook
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(72, 19);
+            this.button1.Location = new System.Drawing.Point(74, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -76,7 +77,7 @@ namespace Sharpbook
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 2;
@@ -87,7 +88,7 @@ namespace Sharpbook
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(149, 24);
+            this.label2.Location = new System.Drawing.Point(71, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 3;
@@ -116,11 +117,11 @@ namespace Sharpbook
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(231, 307);
+            this.label3.Location = new System.Drawing.Point(229, 307);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Algoritma:";
+            this.label3.Text = "Algorithm:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // comboBox1
@@ -129,7 +130,7 @@ namespace Sharpbook
             this.comboBox1.Items.AddRange(new object[] {
             "BFS",
             "DFS"});
-            this.comboBox1.Location = new System.Drawing.Point(195, 326);
+            this.comboBox1.Location = new System.Drawing.Point(195, 323);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
@@ -187,18 +188,29 @@ namespace Sharpbook
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(249, 286);
+            this.label6.Location = new System.Drawing.Point(247, 286);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "->";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(170, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(171, 24);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Graph Visualization";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 656);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label5);
@@ -240,6 +252,7 @@ namespace Sharpbook
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 

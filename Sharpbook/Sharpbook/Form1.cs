@@ -168,6 +168,7 @@ namespace Sharpbook
 					output += "th-";
                 }
 				output += "degree connection\r\n";
+				output += "Jalur koneksi : ";
 				output += this.path[0];
 				
 				for (int i = 1; i < this.path.Count(); i++)
@@ -224,25 +225,39 @@ namespace Sharpbook
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			friendRecommendationNode = comboBox2.SelectedItem.ToString();
-			this.friendRecommend = this.graf.FriendRecommendation(friendRecommendationNode);
-			this.printFriendRecommendation();
+			try
+			{
+				friendRecommendationNode = comboBox2.SelectedItem.ToString();
+				this.friendRecommend = this.graf.FriendRecommendation(friendRecommendationNode);
+				this.printFriendRecommendation();
+			}
+            catch (NullReferenceException)
+            {
+				MessageBox.Show("Akun harus dipilih dahulu!", "Error");
+			}
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			pathNode1 = comboBox2.SelectedItem.ToString();
-			pathNode2 = comboBox3.SelectedItem.ToString();
-			string algoritma = comboBox1.SelectedItem.ToString();
-			if (algoritma == "BFS")
+			try
 			{
-				this.path = this.graf.BFS(pathNode1, pathNode2);
+				pathNode1 = comboBox2.SelectedItem.ToString();
+				pathNode2 = comboBox3.SelectedItem.ToString();
+				string algoritma = comboBox1.SelectedItem.ToString();
+				if (algoritma == "BFS")
+				{
+					this.path = this.graf.BFS(pathNode1, pathNode2);
+				}
+				if (algoritma == "DFS")
+				{
+					this.path = this.graf.DFS(pathNode1, pathNode2);
+				}
+				this.printPath();
 			}
-			if (algoritma == "DFS")
+            catch (NullReferenceException)
             {
-				this.path = this.graf.DFS(pathNode1, pathNode2);
-			}
-			this.printPath();
+				MessageBox.Show("Akun atau jenis algoritma harus dipilih dahulu!", "Error");
+            }
 		}
 
 		private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
